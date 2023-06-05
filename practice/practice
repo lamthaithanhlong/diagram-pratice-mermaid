@@ -1,0 +1,51 @@
+%%{init: {'theme': 'default'}}%%
+classDiagram
+  class Rental {
+    -startDate: Date
+    -maxDuration: int
+    -endDate: Date
+    +addRental(): void
+    +deleteRental(): void
+    +searchRental(): void
+  }
+
+  class Customer {
+    -name: string
+    -phone: string
+    -email: string
+  }
+
+  class Address {
+    -street: string
+    -city: string
+    -zipCode: string
+  }
+
+  class Reservation {
+    -dateReserved: Date
+    +reserveCar(): void
+  }
+
+  class Car {
+    -carId: long
+    -licenseNo: string
+    -isAvailable: boolean
+    +checkAvailability(): boolean
+  }
+
+  class CarType {
+    -carTypeId: int
+    -brand: string
+    -model: string
+    -priceForRent: double
+    -name: string
+    -quantity: int
+  }
+
+  Rental "1" -- "1" Customer: has
+  Customer "1" -- "1" Address: has
+  Rental "1" -- "1..*" Car
+  Rental "1" -- "0..*" Reservation
+  Car "1" -- "1" CarType
+
+

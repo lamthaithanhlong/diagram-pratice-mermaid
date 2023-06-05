@@ -1,0 +1,21 @@
+%%{init: {'theme': 'default'}}%%
+graph LR
+    Student --- CreatePlan --- System
+    Student --- ViewSchedule --- System
+    Student --- Enrollclass --- System
+    Student --- DropClass --- System
+    Student --- Waitlist --- System
+    VerifyPrerequisites --- System
+    SentNotification --- System
+
+
+subgraph Student Registration System use case
+    CreatePlan(create plan)
+    ViewSchedule(view schedule)
+    Enrollclass(enroll in class)
+    DropClass(drop class)
+    Waitlist(waitlist for class)
+    VerifyPrerequisites(being verified prerequisites)
+    SentNotification(being sent notification)
+end
+

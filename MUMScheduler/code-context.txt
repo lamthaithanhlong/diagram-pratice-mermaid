@@ -1,0 +1,35 @@
+%%{init: {'theme': 'default'}}%%
+graph TB
+    A[Student] -- create a plan --> B[Student Registration System]
+    A[Student] -- choose a faculty advisor --> B[Student Registration System]
+    B[Student Registration System] -- verify student plan --> A[Student]
+    A[Student] -- view class schedule --> B[Student Registration System]
+    A[Student] -- choose class --> B[Student Registration System]
+    A[Student] -- request course --> B[Student Registration System]
+    B[Student Registration System] -- indicate prefer --> C[Section]
+    B[Student Registration System] -- referring --> D[Transcript]
+    B[Student Registration System] -- enroll student --> E[Classroom]
+    C[Section] -- not available --> F[Wait-list]
+    F[Wait-list] -- class becomes available --> B[Student Registration System]
+    B[Student Registration System] -- send email notification --> A[Student]
+
+
+
+===================
+Version 2:
+
+
+%%{init: {'theme': 'default'}}%%
+graph TB
+    A[Student] -- create a plan --> B[Student Registration System]
+    A[Student] -- choose a faculty advisor --> B[Student Registration System]
+    B[Student Registration System] -- verify student plan --> A[Student]
+    A[Student] -- view class schedule --> B[Student Registration System]
+    A[Student] -- choose class --> B[Student Registration System]
+    A[Student] -- request course --> B[Student Registration System]
+    B[Student Registration System] -- indicate prefer --> C[Section]
+    B[Student Registration System] -- referring --> D[Transcript]
+    B[Student Registration System] -- enroll student --> E[Classroom]
+    %% C[Section] -- not available --> F[Wait-list]
+    %% F[Wait-list] -- class becomes available --> B[Student Registration System]
+    B[Student Registration System] -- send email notification --> A[Student]
